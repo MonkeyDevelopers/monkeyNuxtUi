@@ -6,7 +6,7 @@ export interface ModuleOptions { }
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'monkeyDevUI',
-    configKey: 'MkyDevUI',
+    configKey: 'monkeyUI',
   },
   // Default configuration options of the Nuxt module
   defaults: {},
@@ -28,6 +28,11 @@ export default defineNuxtModule<ModuleOptions>({
           ]
         }
       }
+    })
+
+    await installModule('nuxt-icon', {
+      // module configuration
+      exposeConfig: true,
     })
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
